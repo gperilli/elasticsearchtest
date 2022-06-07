@@ -1,0 +1,50 @@
+<h1 style="width: 100%;">Movies Index</h1>
+
+<%= form_tag movies_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+<div class="ag-wrapper" style="overflow: visible;">
+  <div class="ag-container" style="overflow: visible;">
+
+        <div class="movies-container wireframe"style="">
+
+        <% @movies.each do |movie| %>
+            <div class="card" style="width: 100%; background: transparent;">
+                
+                <%= link_to movie_path(movie.id) do %>
+                    <div class="card wireframe">
+                        <% if movie.poster_url == "https://image.tmdb.org/t/p/w500/" %>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="movie-card__poster-proportion wireframe" preserveAspectRatio="xMidYMid slice" width="100%" fill="transparent" style="" viewBox="0 0 500 750"></svg>
+                        <img src="<%= image_path('noposter.png') %>" class="movie-card__poster-image">
+                        <% else %>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="movie-card__poster-proportion wireframe" preserveAspectRatio="xMidYMid slice" width="100%" fill="transparent" style="" viewBox="0 0 500 750"></svg>
+                        <img src="<%= movie.poster_url %>" class="movie-card__poster-image" style="">
+                        <% end %>
+                    </div>
+                <% end %>
+
+                <div class="movie-card__title-container wireframe" style="">
+                    <%= link_to movie_path(movie.id), style: 'position: relative; display: flex; text-decoration: none; float: left; width: fit-content;', class: '' do %>
+                        <span class="movie-card__title wireframe">
+                            <%= movie.title  %>
+                        </span>
+                    <% end %>
+                </div>
+                
+            
+                
+                
+            </div>
+        <% end %>
+
+
+        </div>
+    </div>
+</div>

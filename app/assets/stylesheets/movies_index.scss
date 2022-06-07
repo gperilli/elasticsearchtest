@@ -1,0 +1,90 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/** @import "config/colors"; **/
+
+@import "config/fonts";
+@import "config/colors";
+//@import "config/bootstrap_variables";
+@import "config/allgore_variables";
+
+.movies-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  grid-row-gap: 60px;
+}
+
+.movie-card__poster-proportion {
+  vertical-align: bottom;
+  stroke-width: 0px;
+  background-color: #000;
+}
+
+.movie-card__poster-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  box-shadow: -1px 1px 16px -2px rgba(255, 255, 255, 0.6);
+}
+
+.movie-card__title-container {
+  position: relative;
+  width: 100%;
+  text-overflow: ellipsis;
+  .movie-card__title {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    color: $allgore-red;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.movie-card__meta-data-container {
+  width: 100%;
+  display: inline-block;
+  .movie-card__meta-data {
+    color: #ccc;
+    font-size: 12px;
+    float: left;
+    .movie-card__meta-data-link {
+      color: #ccc;
+    }
+    .movie-card__meta-data-link:hover {
+      color: #ccc;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .movies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+    grid-row-gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    grid-row-gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

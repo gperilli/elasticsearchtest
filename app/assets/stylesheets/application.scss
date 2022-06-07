@@ -1,0 +1,314 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+//@import "config/bootstrap_variables";
+@import "config/allgore_variables";
+
+// External libraries
+//@import "bootstrap/scss/bootstrap";
+//@import "font-awesome-sprockets";
+//@import "font-awesome";
+
+
+// Your CSS partials
+//@import "components/index";
+//@import "pages/index";
+
+// Horror font
+@font-face {
+  font-family: "horrorFont";
+  /* src: url(graphic_psychopathy-webfont.woff); */
+  src: asset-url("graphic_psycopathy.ttf");
+}
+
+// External libraries
+//@import "bootstrap/scss/bootstrap";
+//@import "font-awesome-sprockets";
+//@import "font-awesome";
+
+// Your CSS partials
+@import "movies_index";
+//@import "movies_show";
+//@import "lists_index";
+
+//@import "components/flickity";
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.wireframe {
+  outline: 0px solid #808080;
+}
+
+/*@import "pages/movies";*/
+.background-color {
+  background-color: $background-color;
+}
+
+.allgore-red-background {
+  background-color: $allgore-red !important;
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+.ag-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.ag-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: calc((100vw - 1100px) / 2);
+  margin-right: calc((100vw - 1100px) / 2);
+  overflow: hidden;
+}
+
+.relflowleft-container {
+  position: relative; 
+  float: left; 
+  width: 100%;
+}
+
+.card {
+  border: 0px !important;
+}
+
+.wide-screen-items {
+  display: block;
+}
+
+.narrow-screen-items {
+  display: none;
+}
+
+.window-height {
+  height: 100vh;
+}
+
+.window-height-minus-nav-height {
+  height: calc(100vh - #{$ui-nav-icons-yoffset});
+}
+
+.window-height-height-minus-footer-height {
+  height: calc(100vh - #{$ui-footer-height});
+}
+
+.window-height-minus-nav-and-footer-height {
+  height: calc(100vh - #{$ui-nav-icons-yoffset} - #{$ui-footer-height});
+}
+
+.top-container-after-nav-bar {
+  position: relative;
+  float: left;
+  top: $ui-nav-icons-yoffset;
+  width: 100%;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-family: $ag-main-font;
+  float: left;
+  color: #fff;
+  width: 100%;
+  margin-left: 0px;
+  font-weight: 900;
+  font-size: 7rem;
+  letter-spacing: 0.04em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 2);
+  /* color: var(--uitxtclr-1); */
+}
+
+h2 {
+  font-family: $ag-main-font;
+  color: #fff;
+}
+
+h3.section-title {
+  position: relative;
+  float: left;
+  font-family: $ag-main-font;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 2);
+}
+
+.ag-title__svg {
+  height: 90%;
+  fill: #fff;
+  font-size: calc(#{$ui-nav-icons-size} - 5px);
+  padding-top: 0px;
+  position: relative;
+  left: 5%;
+  top: 5%;
+  vertical-align: bottom;
+  z-index: 101;
+  overflow: visible;
+  vertical-align: bottom;
+  left: 0px;
+}
+
+.ag-title__svgpath {
+  fill: $allgore-red;
+  filter: drop-shadow(10px 0 5px #000);
+}
+
+/* Footer */
+.footer-height {
+  height: $ui-footer-height;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: $allgore-red;
+}
+
+.ag-pagination-container {
+  margin-top: 20px;
+  position: relative;
+  width: calc(100vw - 40px);
+  display: flex;
+  justify-content: center;
+}
+
+.ag-pagination-item {
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.current {
+  background-color: $allgore-red;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+
+.gap {
+  color: $allgore-red;
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+.ag-pagination-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  background-color: #cb4335;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+
+.ag-pagination-anchor:hover {
+  background-color: $allgore-red;
+  text-decoration: none;
+  color: white;
+}
+
+.ag-pagination-anchor:active {
+  background-color: $allgore-red !important;
+}
+/* 320px — 480px: Mobile devices. */
+/* 481px — 768px: iPads, Tablets. */
+/* 769px — 1024px: Small screens, laptops. */
+/* 1025px — 1200px: Desktops, large screens. */
+/* 1201px and more — Extra large screens, T */
+
+@media (max-width: 1200px) {
+  .ag-container {
+    left: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ag-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ag-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    left: 0px;
+  }
+
+  h3.section-title {
+    font-weight: 500;
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .ag-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    left: 0px;
+  }
+
+  .wide-screen-items {
+    display: none;
+  }
+
+  .narrow-screen-items {
+    display: block;
+  }
+
+  h3.section-title {
+    font-weight: 500;
+    font-size: 5vw;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 480px) {
+  h3.section-title {
+    font-size: 8vw;
+  }
+}
